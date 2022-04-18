@@ -69,8 +69,21 @@ Sending the weather forecast in an email:
 ```sh
 python -m app.daily_briefing
 
+
 # in production mode:
 APP_ENV="production" COUNTRY_CODE="US" ZIP_CODE="20057" python -m app.daily_briefing
+```
+
+Test weather service app on heroku server:
+
+```sh
+heroku run "python -m app.weather_service"
+```
+
+Launch web_app using flask package
+
+```sh
+FLASK_APP=web_app flask run
 ```
 
 
