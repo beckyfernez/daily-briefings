@@ -16,3 +16,22 @@ def about():
     print("ABOUT...")
     return "About Me"
     #return render_template("about.html")
+
+@home_routes.route("/another")
+def another():
+    print("ANOTHER PAGE MAYBE...")
+    return "Here is another page"
+    #return render_template("about.html")
+
+
+@home_routes.route("/hello")
+def hello_world():
+    print("HELLO...", dict(request.args))
+    
+    # go check the URL params for one called "name", and use it if possible
+    # if no "name" parameter is specified, use a default value
+    name = request.args.get("name") or "World"
+    
+    message = f"Hello, {name}!"
+    return message
+    #return render_template("hello.html", message=message)
